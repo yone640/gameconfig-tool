@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gameconfig-tool"
+version = "0.1.0"
+description = "Game designer config table converter & validator (Excel -> JSON)"
+requires-python = ">=3.9"
+dependencies = ["openpyxl>=3.1"]
+
+[project.scripts]
+gameconfig = "gameconfig.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
