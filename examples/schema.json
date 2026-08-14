@@ -1,0 +1,17 @@
+{
+  "items": {
+    "columns": ["id", "name", "type", "value", "sell_price"],
+    "types": {"id": "int", "value": "int", "sell_price": "int"},
+    "required": ["id", "name", "type"],
+    "unique": ["id"],
+    "enums": {"type": ["consumable", "equipment", "material"]},
+    "ranges": {"value": {"min": 0, "max": 9999}, "sell_price": {"min": 0, "max": 9999}}
+  },
+  "heroes": {
+    "columns": ["id", "name", "hp", "atk", "starter_weapon"],
+    "types": {"id": "int", "hp": "int", "atk": "int"},
+    "required": ["id", "name"],
+    "unique": ["id"],
+    "refs": [{"column": "starter_weapon", "table": "items", "key": "id"}]
+  }
+}
